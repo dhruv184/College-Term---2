@@ -88,7 +88,40 @@ while True:
 
     except Exception as e:
          
-         print("error" , e)
+        print("error" , e)
+    
+print("DONE")
+'''
+#print("=======================")
+'''
+class InvalidRadiusError(Exception):
+
+    def __init__(self, radius):
+        super().__init__()
+        self.age = radius
+    
+class Circle:
+
+    def __init__(self, radius):
+
+        self.radius = radius
+
+    def area (self):
+
+        return self.radius ** 2 * 3.14
+
+    def setRadius(self , r):
+        if r < 0:
+            raise InvalidRadiusError(r)
+        self.radius = r
+
+c = Circle(10)
+
+try:
+    c.setRadius(-1)
+    print("Area = " , c.area())
+except InvalidRadiusError as e:
+    print("error" , e)
     
 print("DONE")
 '''
