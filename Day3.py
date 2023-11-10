@@ -26,7 +26,10 @@ while True:
 print("done")
 '''
 #print("=======================") 
-
+'''
+"""
+part = 1
+"""
 def divide( a , b ):
 
     try:
@@ -42,3 +45,22 @@ def divide( a , b ):
 
 r = divide( 2 , 3 ) 
 print("Result = ", r )       
+
+"""
+part = 2
+"""
+
+def divide( a , b ):
+
+    return a/b
+
+try:
+    r = divide( 2 , 3 ) 
+    print("Result = ", r )  
+
+except Exception as e:
+    print("error" , e)
+
+print("done")
+'''
+#print("=======================")
