@@ -64,12 +64,17 @@ except Exception as e:
 print("done")
 '''
 #print("=======================")
+'''
+class InvalidAgeError(Exception):
+    def __init__(self, age):
+        super().__init__()
+        self.age = age
 
 def getAge():
 
     age = int(input("Enter your Age : "))
     if age < 18 or age > 120:
-        raise ValueError
+        raise InvalidAgeError(age)
     return age
 
 while True:
@@ -77,8 +82,14 @@ while True:
         age = getAge()
         print("Age = ", age)
         break
+    except InvalidAgeError as e:
+
+        print("Enter Valid Age (age must be between 18 and 120)")
+
     except Exception as e:
-        print("Error" , e)
-        print("Enter Valid Age")
-        
+         
+         print("error" , e)
+    
 print("DONE")
+'''
+#print("=======================")
