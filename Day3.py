@@ -64,3 +64,21 @@ except Exception as e:
 print("done")
 '''
 #print("=======================")
+
+def getAge():
+
+    age = int(input("Enter your Age : "))
+    if age < 18 or age > 120:
+        raise ValueError
+    return age
+
+while True:
+    try:
+        age = getAge()
+        print("Age = ", age)
+        break
+    except Exception as e:
+        print("Error" , e)
+        print("Enter Valid Age")
+        
+print("DONE")
