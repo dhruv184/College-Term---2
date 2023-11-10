@@ -1,10 +1,9 @@
-
+'''
 """
 Exception Handling Example
 """
 
 while True:
-    
     try:
         
         x = int(input("Enter a number : "))
@@ -25,3 +24,21 @@ while True:
         print("ERROR" , e)
 
 print("done")
+'''
+#print("=======================") 
+
+def divide( a , b ):
+
+    try:
+        result = a/b
+
+    except :
+
+        return ' Division by zero id not allowed '
+
+    else:
+
+        return result
+
+r = divide( 2 , 3 ) 
+print("Result = ", r )       
