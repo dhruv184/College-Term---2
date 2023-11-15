@@ -147,3 +147,42 @@ fullNameLabel.grid(row = 3 , column = 1 , columnspan = 2)
 root.mainloop()
 '''
 #print("=======================")
+'''
+"""Grid Example - 2 (Adding Frame)"""
+
+import tkinter as tk
+
+def getFullName():
+
+    firstname = firstEntry.get()
+    lastname = lastEntry.get()
+    fullNameLabel[ "text"] = f" {firstname} {lastname}"
+
+root = tk.Tk()
+root.geometry("500x500")
+
+frame1 = tk.Frame(root)
+frame1.pack(side = "top")
+
+firstLabel = tk.Label(frame1 , text =  "First Name : ")
+firstLabel.grid(row = 0 , column = 0)
+
+lastLable = tk.Label(frame1 , text =  "Last Name : ")
+lastLable.grid(row = 1 , column = 0)
+
+firstEntry = tk.Entry(frame1)
+firstEntry.grid(row = 0 , column = 1)
+
+lastEntry = tk.Entry(frame1)
+lastEntry.grid(row = 1 , column = 1)
+
+btn = tk.Button(frame1 , text = "Submit" , command = getFullName)
+btn.grid(row = 2 , column = 1)
+
+fullNameLabel = tk.Label(frame1 , text = " Full Name ")
+fullNameLabel.grid(row = 3 , column = 1 , columnspan = 2)
+
+root.mainloop()
+'''
+#print("=======================")
+
