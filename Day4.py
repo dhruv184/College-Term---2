@@ -112,4 +112,38 @@ btn.pack()
 root.mainloop()
 '''
 #print("=======================")
+'''
+"""Grid Example"""
 
+import tkinter as tk
+
+def getFullName():
+
+    firstname = firstEntry.get()
+    lastname = lastEntry.get()
+    fullNameLabel[ "text"] = f" {firstname} {lastname}"
+
+root = tk.Tk()
+root.geometry("500x500")
+
+firstLabel = tk.Label(root , text =  "First Name : ")
+firstLabel.grid(row = 0 , column = 0)
+
+lastLable = tk.Label(root , text =  "Last Name : ")
+lastLable.grid(row = 1 , column = 0)
+
+firstEntry = tk.Entry(root)
+firstEntry.grid(row = 0 , column = 1)
+
+lastEntry = tk.Entry(root)
+lastEntry.grid(row = 1 , column = 1)
+
+btn = tk.Button(root , text = "Submit" , command = getFullName)
+btn.grid(row = 2 , column = 1)
+
+fullNameLabel = tk.Label(root , text = " Full Name ")
+fullNameLabel.grid(row = 3 , column = 1 , columnspan = 2)
+
+root.mainloop()
+'''
+#print("=======================")
