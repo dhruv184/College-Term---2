@@ -185,4 +185,32 @@ fullNameLabel.grid(row = 3 , column = 1 , columnspan = 2)
 root.mainloop()
 '''
 #print("=======================")
+'''
+"""Radio Button Example"""
 
+import tkinter as tk
+
+def action():
+
+    if option.get() == 1:
+        print("Option 1 is selected" , option.get())
+    else:
+        print("Option 2 is selected" , option.get())    
+    
+
+root = tk.Tk()
+root.geometry("500x500")
+
+option = tk.IntVar()
+rbtn1 = tk.Radiobutton(root , text = "Option 1" , variable = option , value = 1)
+rbtn1.pack()
+
+rbtn2 = tk.Radiobutton(root , text = "Option 2" , variable = option , value = 2)
+rbtn2.pack()
+
+btn = tk.Button(root , text = "Submit" , command = action)
+btn.pack()
+
+root.mainloop()
+'''
+#print("=======================")
