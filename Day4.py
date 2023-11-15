@@ -214,3 +214,57 @@ btn.pack()
 root.mainloop()
 '''
 #print("=======================")
+'''
+"""
+The app should allow the user to enter
+two numbers. when Submit
+button is clicked add the numbers
+and display the total
+"""
+
+import tkinter as tk
+
+def Sum():
+
+    try:
+
+        n1 = firstEntry.get()
+        n2 = secondEntry.get()
+        
+        total = int(n1) + int(n2)
+
+        SumLabel[ "text"] = f" Total = {total}"
+        SumLabel["fg"] = "Black"
+
+    except Exception as e:
+
+        SumLabel["text"] = "Enter valid Numbers"
+        SumLabel["fg"] = "red"
+
+root = tk.Tk()
+root.geometry("500x500")
+
+frame1 = tk.Frame(root)
+frame1.pack()
+
+number1 = tk.Label(frame1 , text =  "Enter Number : ")
+number1.grid(row =0 , column = 0)
+
+number2 = tk.Label(frame1 , text =  "Enter Number : ")
+number2.grid(row =1 , column = 0)
+
+firstEntry = tk.Entry(frame1)
+firstEntry.grid(row = 0 , column = 1)
+
+secondEntry = tk.Entry(frame1)
+secondEntry.grid(row = 1 , column = 1)
+
+btn = tk.Button(frame1 , text = "Submit" , command = Sum)
+btn.grid(row = 2 , column = 1)
+
+SumLabel = tk.Label(frame1 , text = " Total = ")
+SumLabel.grid(row = 3 , column = 1 , columnspan = 2)
+
+root.mainloop()
+'''
+#print("=======================")
