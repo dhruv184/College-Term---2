@@ -84,3 +84,32 @@ resultLable1.pack()
 root.mainloop()
 '''
 #print("=======================")
+'''
+"""Using Frame"""
+
+import tkinter as tk
+
+def action():
+
+    name = entry.get()
+    print(name)
+
+root = tk.Tk()
+root.geometry("500x500")
+
+frame1 = tk.Frame(root , bg = "red")
+frame1.pack(side = "top")
+
+label1 = tk.Label(frame1, text = "User Name")
+label1.pack(side = "top")
+
+entry = tk.Entry(frame1)
+entry.pack(side = "top")
+
+btn = tk.Button(root , text = "Button 1" , command = action)
+btn.pack()
+
+root.mainloop()
+'''
+#print("=======================")
+
