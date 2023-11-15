@@ -47,3 +47,40 @@ for i in range(5):
 
 root.mainloop()
 '''
+#print("=======================")
+'''
+import tkinter as tk
+
+def action():
+
+    name = entry.get()
+
+    if len(name) > 0 :
+
+        print("Hi" , name)
+        resultLable1[ "text"] = f" Hi , {name}"
+
+    else:
+
+        print("Hi There")
+        resultLable1[ "text"] = f" Hi There "
+
+root = tk.Tk()
+root.geometry("500x500")
+root.title("GUI Interface")
+
+lable1 = tk.Label(root , text = "User Name")
+lable1.pack()
+
+entry = tk.Entry(root)
+entry.pack()
+
+btn = tk.Button(root, text = "Button 1" , command = action)
+btn.pack()
+
+resultLable1 = tk.Label(root , text = "Result : ")
+resultLable1.pack()
+
+root.mainloop()
+'''
+#print("=======================")
