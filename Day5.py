@@ -14,7 +14,7 @@ print(txt)
 root.mainloop()
 '''
 #print("=======================")
-
+'''
 import tkinter as tk
 
 from tkinter import ttk
@@ -66,5 +66,42 @@ btn1 = ttk.Button(root , text = "Button 1" , command = action)
 btn1.pack()
 
 root.mainloop()
+'''
+#print("=======================")
+'''
+import tkinter as tk
 
+from tkinter import ttk
+
+def action():
+
+    option = comboBox.get()
+    print(option)
+    
+    s = listBox.curselection()
+    index = s[0]
+
+    print(s , mylist[index])
+    
+root = tk.Tk()
+root.geometry("500x500")
+
+label1 = ttk.Label(root , text = "Select Pizza Size")
+label1.pack()
+
+comboBox = ttk.Combobox(root , values = ["Small" , "Medium" , "Large"])
+comboBox.pack()
+
+btn = ttk.Button(root , text = "Select" , command = action)
+btn.pack()
+
+mylist = ["Python" , "Java" , "C#" , "C++"]
+
+var = tk.StringVar(value = mylist)
+
+listBox = tk.Listbox(root , listvariable = var , selectmode = "extended")
+listBox.pack()
+
+root.mainloop()
+'''
 #print("=======================")
