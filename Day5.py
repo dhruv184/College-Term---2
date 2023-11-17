@@ -149,6 +149,7 @@ import tkinter as tk
 from tkinter import ttk
 
 from tkinter import filedialog
+
 def action():
     value = slider.get()
     print("Value = ",round(value))
@@ -195,3 +196,56 @@ textWidget.pack()
 root.mainloop()
 '''
 #print("=======================")
+
+import tkinter as tk
+
+from tkinter import ttk 
+
+from tkinter import filedialog
+
+def action():
+
+    filename = filedialog.askopenfilename()
+
+    file = open("ProductFile.txt" , "w")
+    file.write(filename)
+    file.close()
+    
+    file = open("ProductFile.txt", "r")
+    txt = file.read()
+    textWidget.insert(tk.END, txt)
+    file.close()
+
+
+root = tk.Tk()
+root.title("Product infomation")
+root.geometry("400x400")
+
+label1 = ttk.Label(root , text = "Product infomation")
+label1.pack()
+
+frame1 = tk.Frame(root)
+frame1.pack()
+
+label2 = ttk.Label(frame1 , text = "Name")
+label2.grid(row = 0 , column = 0)
+
+entry = tk.Entry(frame1)
+entry.grid(row = 0 , column = 1)
+
+label3 = ttk.Label(frame1 , text = "Product")
+label3.grid(row = 1 , column = 0)
+
+entry = tk.Entry(frame1)
+entry.grid(row = 1 , column = 1)
+
+btn1 = ttk.Button(frame1 , text = "Save To File" , command = action)
+btn1.grid(row = 2 , column = 1 , columnspan = 2)
+
+btn2 = ttk.Button(frame1 , text = "Read From File" , command = action)
+btn2.grid(row = 3 , column = 1 , columnspan = 2)
+
+textWidget = tk.Text(frame1)
+textWidget.grid(row = 4 , column = 1 , columnspan = 2)
+
+root.mainloop()
