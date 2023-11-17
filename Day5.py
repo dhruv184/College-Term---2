@@ -105,3 +105,41 @@ listBox.pack()
 root.mainloop()
 '''
 #print("=======================")
+'''
+import tkinter as tk
+from tkinter import ttk
+
+def action():
+    value = slider.get()
+    print("Value = ",round(value))
+
+root = tk.Tk()
+root.geometry("500x500")
+
+notebook = ttk.Notebook(root)
+notebook.pack(fill = "both" , expand = True)
+
+frame1 = tk.Frame(notebook , bg = "red")
+frame1.pack(fill = "both" , expand = True)
+
+frame2 = tk.Frame(notebook , bg = "green")
+frame2.pack(fill = "both" , expand = True)
+
+notebook.add(frame1 , text = "Page 1")
+notebook.add(frame2 , text = "Page 2")
+
+label = ttk.Label(frame1 , text = "Select Pizza Size")
+label.pack()
+
+comboBox = ttk.Combobox(frame1 , values = ["Small" , "Medium" , "Large"])
+comboBox.pack()
+
+slider = ttk.Scale(frame2 , from_= 0 , to = 1000 , orient =tk.HORIZONTAL) 
+slider.pack()
+
+btn = ttk.Button(frame2 , text = "Get Data" , command = action)
+btn.pack()
+
+root.mainloop()
+'''
+#print("=======================")
