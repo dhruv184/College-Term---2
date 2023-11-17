@@ -196,7 +196,7 @@ textWidget.pack()
 root.mainloop()
 '''
 #print("=======================")
-
+'''
 import tkinter as tk
 
 from tkinter import ttk 
@@ -233,7 +233,7 @@ label2.grid(row = 0 , column = 0)
 entry = tk.Entry(frame1)
 entry.grid(row = 0 , column = 1)
 
-label3 = ttk.Label(frame1 , text = "Product")
+label3 = ttk.Label(frame1 , text = "Price")
 label3.grid(row = 1 , column = 0)
 
 entry = tk.Entry(frame1)
@@ -249,3 +249,5 @@ textWidget = tk.Text(frame1)
 textWidget.grid(row = 4 , column = 1 , columnspan = 2)
 
 root.mainloop()
+'''
+#print("=======================")
