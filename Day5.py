@@ -206,12 +206,14 @@ from tkinter import filedialog
 def action():
 
     filename = filedialog.askopenfilename()
-
-    file = open("ProductFile.txt" , "w")
-    file.write(filename)
-    file.close()
     
-    file = open("ProductFile.txt", "r")
+    product_name = entry.get()
+    
+    file1 = open("ProductFile.txt" , "w")
+    file1.write(product_name)
+    file1.close()
+
+    file = open(filename, "r")
     txt = file.read()
     textWidget.insert(tk.END, txt)
     file.close()
@@ -251,3 +253,4 @@ textWidget.grid(row = 4 , column = 1 , columnspan = 2)
 root.mainloop()
 '''
 #print("=======================")
+
