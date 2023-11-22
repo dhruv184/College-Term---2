@@ -162,7 +162,7 @@ for u in users:
     print(u)        
 '''
 #print("=======================")
-
+'''
 txt = "Welcome to Python"
 txt2 = "4-5-6-7-8-3"
 
@@ -171,3 +171,17 @@ list2 = txt2.split('-')
 
 print(list1)
 print(list2)
+
+file = open("data.txt" , "r")
+data = file.read()
+list3 = data.split()
+
+print(list3)
+
+sum = 0
+for e in list3:
+    sum += int(e)
+
+print("\nsum : " , sum , "\n")
+'''
+#print("=======================")
