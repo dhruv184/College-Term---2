@@ -13,6 +13,17 @@ print(myList)
 '''
 #print("=======================")
 '''
+list2 = [x for x in range(1,11)]
+print(list2)
+
+list3 = [x*2 - 1 for x in range(1,51)]
+print(list3)
+
+list4 = [x for x in range(1,100,2)]
+print(list4)
+'''
+#print("=======================")
+'''
 """
 Creating and Accessing Lists
 ❑ Create a list named fruits containing the following fruits: "apple","banana", "orange", "grape", "kiwi".
