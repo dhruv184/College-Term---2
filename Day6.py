@@ -122,3 +122,43 @@ print("\nNew list of even number : ", even)
 print("\nMaximum number : ",max(numbers),"\n")
 '''
 #print("=======================")
+'''
+class User:
+
+    def __init__(self, name , age):
+        
+        self.name = name
+        self.age = age
+
+    def __str__(self):
+
+        return f"Name : {self.name} , Age : {self.age}"
+
+def createUser():
+
+    name = input("Enter user name : ")
+    age = input("Enter user  age : ")
+    return User(name,age)
+
+users = [ ] 
+
+for i in range(3):
+
+    user = createUser()
+    users.append(user)
+
+for user in users :
+    print(user)    
+
+for u in users:
+    if u.name == "Tim ":
+        print("Tim's Age :",u.age)
+        break 
+    else:
+        print("Tim Not Present")   
+
+users.sort( key = lambda user : user,)
+for u in users:
+    print(u)        
+'''
+#print("=======================")
