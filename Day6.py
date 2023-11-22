@@ -162,3 +162,12 @@ for u in users:
     print(u)        
 '''
 #print("=======================")
+
+txt = "Welcome to Python"
+txt2 = "4-5-6-7-8-3"
+
+list1 = txt.split()  # split() conver a string into list.
+list2 = txt2.split('-') 
+
+print(list1)
+print(list2)
