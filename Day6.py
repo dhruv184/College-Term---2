@@ -57,7 +57,8 @@ Creating and Accessing Lists
 ❑ Print the modified list.
 """
 
-fruits = ["Apple" , "Banana" , "Orange" , "Grape" , "Kiwi"]
+fruits = ["Apple" , "Banana" , "Orange" , "Grape" , "Kiwi" ]
+numbers = [2 , 3, 5, 40 , 1 , 3]
 
 print("\nList of Fruits : ",fruits)
 
@@ -65,7 +66,21 @@ print("\nThird element of List is : ",fruits[2])
 
 fruits[2] = "pear"
 
-fruits.append("Watermelon")
+fruits.append("Watermelon") # add item to the end of the list.
+
+fruits.insert(1,"orange")   # add item to a given index in the list.
+
+x = fruits.pop()            # remove the last item of the list and print that item.
+print(x)
+
+y = fruits.remove("Apple")  # remove the given item from list and print remaining list.
+print(y)
+
+print(fruits.count("Banana")) # it will count how many times the given item is there in list.
+
+print(numbers.sort())        # it  will  arange the list items in smaller to larger order.
+
+print(numbers.sort(reverse = True))  # it  will  arange the list items in reverse order.
 
 print("\nModified list : ",fruits,"\n")
 '''
