@@ -25,6 +25,29 @@ print(list4)
 #print("=======================")
 '''
 """
+Create a list that contains random numbers between 20 and 100
+"""
+
+listNum = [ ]
+
+import random
+
+for i in range(10):
+    x = random.randint(20,100)
+    listNum.append(x)
+
+print("\nList of Random numbers form 20 to 100 is : ",listNum,"\n")
+
+"""
+OR
+"""
+
+list2 = [random.randint(20,100) for i in range(10)]
+print("\nList of Random numbers form 20 to 100 is : ",list2,"\n")
+'''
+#print("=======================")
+'''
+"""
 Creating and Accessing Lists
 ❑ Create a list named fruits containing the following fruits: "apple","banana", "orange", "grape", "kiwi".
 ❑ Print the entire list to the console.
