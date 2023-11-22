@@ -5,6 +5,14 @@ for i in range(len(list1)):
 '''
 #print("=======================")
 '''
+myList = [ ]
+for i in range(1,11):
+    myList.append(i)
+
+print(myList)
+'''
+#print("=======================")
+'''
 """
 Creating and Accessing Lists
 ❑ Create a list named fruits containing the following fruits: "apple","banana", "orange", "grape", "kiwi".
