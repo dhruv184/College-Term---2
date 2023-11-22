@@ -185,3 +185,21 @@ for e in list3:
 print("\nsum : " , sum , "\n")
 '''
 #print("=======================")
+'''
+grades = [30 , 50 , 70 , 90]
+list1 = [ ]
+
+for e in grades:
+    if e < 50:
+        list1.append("F")
+    elif e < 60:
+        list1.append("C+")
+    elif e < 80:
+        list1.append("B+")
+    else : 
+        list1.append("A+") 
+
+print(grades)
+print(list1)
+'''
+#print("=======================")
