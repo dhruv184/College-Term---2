@@ -1,4 +1,10 @@
 '''
+list1 = [3,4,5,6,2]
+for i in range(len(list1)):
+    print(f"list1[{i}]" , list1[i])
+'''
+#print("=======================")
+'''
 """
 Creating and Accessing Lists
 ❑ Create a list named fruits containing the following fruits: "apple","banana", "orange", "grape", "kiwi".
