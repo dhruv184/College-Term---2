@@ -7,3 +7,29 @@ print(t2[3:])
 print(max(t2))
 '''
 #print("=======================")
+'''
+class User:
+    
+    def __init__(self, name , age ):
+        self.name = name
+        self.age = age
+
+    def __str__(self):
+
+        return f"Name : {self.name}  Age : {self.age}" 
+    
+t3 = (User("Tim" , 20) , User("Jane" , 25) , User("Mark" , 33))
+
+print(id(0))
+
+for user in t3:
+    print(user)
+
+t3[0].name = "Susan"
+
+print(len(t3))
+
+for user in t3:
+    print(user)
+'''
+#print("=======================")
