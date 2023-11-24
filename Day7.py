@@ -1,4 +1,5 @@
 '''
+# Tuple
 t1 = ()
 t2 = (1,2,3,4,5,6,7,8)
 print(t1)
@@ -87,5 +88,34 @@ print(s1)
 print(s1.issubset(s2))
 
 print(s1.intersection(s2))
+'''
+#print("=======================")
+'''
+# Dictionary
+d1 = { }
+
+d2 = {10 : "Tim" , 11 : "Jane" , 12 : "Mark"}
+print(d2[10])
+
+d3 = {"Jane" : 40 , "Tim" : 30 , "Susan" : 27}
+print(d3)
+d3["Jane"] = 42
+d3["Reem"] = 28
+print(d3)
+print(d3["Jane"])
+
+user = {"name" : "Reem" , "age" : 22 , "email" : "reem@gmail.com" , "phone" : {"home" : 4859399002 , "work" : 5467388282}}
+print(user)
+print(user["name"] , user["phone"])
+print(user["phone"]["home"])
+
+keys = user.keys()
+print(keys)
+
+for key in keys:
+    print(user[key])
+
+values = user.values()
+print(values)    
 '''
 #print("=======================")
