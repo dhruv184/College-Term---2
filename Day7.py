@@ -119,3 +119,16 @@ values = user.values()
 print(values)    
 '''
 #print("=======================")
+'''
+user1 = {"name" : "Reem" , "age" : 22 , "email" : "reem@gmail.com" , "phone" : {"home" : 4859399002 , "work" : 5467388282}}
+user2 = {"name" : "Tim" , "age" : 24 , "email" : "Tim@gmail.com" , "phone" : {"home" : 4478399002 , "work" : 5467348982}}
+user3 = {"name" : "Mark" , "age" : 32 , "email" : "Mark@gmail.com" , "phone" : {"home" : 4859397852 , "work" : 8767388282}}
+
+users = [user1 , user2 , user3]
+
+for d in users:
+    print(d["name"])
+    print(d["phone"]["home"],"\n")
+'''   
+#print("=======================")
+ 
