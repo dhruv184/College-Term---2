@@ -131,4 +131,28 @@ for d in users:
     print(d["phone"]["home"],"\n")
 '''   
 #print("=======================")
- 
+''' 
+"""
+ Suppose you have a text file named data.txt with the following content:
+Alice 25
+Bob 30
+Charlie 22
+David 35
+• Each line represents a person's name followed by their age.
+• create a Python program to read this file and store the data in a dictionary where the
+names are the keys and the ages are the values
+"""
+d = { }
+
+file =  open("data.txt" , "r")
+data = file.readlines()
+
+for line in data :
+    name , age = line.split()
+    age = int(age)
+    d[name] = age
+
+print("\n" , d.keys())
+print("\n" , d , "\n")    
+'''
+#print("=======================")
