@@ -46,3 +46,44 @@ print(name)
 print(age)
 '''
 #print("=======================")
+'''
+#Sets
+
+import random
+
+s = {1,3,46,5,7}
+
+s.add(200)
+
+for e in s:
+    print(e)
+
+print(s)
+
+names = set()
+
+for i in range(3):
+
+    name = input("Enter user name : ")
+    names.add(name)
+print(len(names))    
+print(names)
+
+list = [ random.randint(10,30) for i in range(10)]
+s3 = set(list)
+
+print(list)
+print(s3)
+'''
+#print("=======================")
+
+s1 = {1,2,3,4,5,6}
+s2 = {3,6}
+
+s1.remove(1)
+print(max(s1))
+print(s1)
+
+print(s1.issubset(s2))
+
+print(s1.intersection(s2))
