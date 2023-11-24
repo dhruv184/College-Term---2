@@ -33,3 +33,16 @@ for user in t3:
     print(user)
 '''
 #print("=======================")
+'''
+def getUserInfo():
+
+    name = input("Enter user name")
+    age = input("Enter user age")
+
+    return (name , age)
+
+name , age = getUserInfo()
+print(name)
+print(age)
+'''
+#print("=======================")
