@@ -46,7 +46,7 @@ list2 = [random.randint(20,100) for i in range(10)]
 print("\nList of Random numbers form 20 to 100 is : ",list2,"\n")
 '''
 #print("=======================")
-'''
+
 """
 Creating and Accessing Lists
 ❑ Create a list named fruits containing the following fruits: "apple","banana", "orange", "grape", "kiwi".
@@ -78,12 +78,14 @@ print(y)
 
 print(fruits.count("Banana")) # it will count how many times the given item is there in list.
 
-print(numbers.sort())        # it  will  arange the list items in smaller to larger order.
+numbers.sort()
+print(numbers)        # it  will  arange the list items in smaller to larger order.
 
-print(numbers.sort(reverse = True))  # it  will  arange the list items in reverse order.
+numbers.sort(reverse = True)
+print(numbers)        # it  will  arange the list items in reverse order.
 
 print("\nModified list : ",fruits,"\n")
-'''
+
 #print("=======================")
 '''
 """
