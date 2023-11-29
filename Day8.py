@@ -79,4 +79,30 @@ with open('sales_data.csv' , 'r') as file:
 for p in products:
     print(p)        
 '''
+#print("=======================")
+'''
+import csv
 
+data = []
+
+row1 = ["Porduct" , "Quantity" , "Price"]
+row2 = ["Laptop" , 10 , 800]
+row3 = ["Smartphone" , 30 , 400]
+
+data.append(row1)
+data.append(row2)
+data.append(row3)
+
+name = input("Enter Product Name : ")
+qty = input("Enter quantity : ")
+price = input("Enter Price : ")
+
+row4 = [name , qty , price]
+data.append(row4)
+
+with open('sales_data_output.csv' , 'w' , newline = '') as file:
+
+    writer = csv.writer(file)
+    writer.writerows(data)
+'''
+#print("=======================")
