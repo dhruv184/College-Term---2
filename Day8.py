@@ -221,3 +221,48 @@ with open("user_data_2.csv" , 'r') as file:
              print(row)    
 '''
 #print("=======================")             
+'''
+"""
+Input csv file:-
+
+Name weeklyHours HourlyRate
+Tim     30         20
+Jane    25         25
+Joe     35         21
+
+Output csv file:-
+
+Name    wages
+Tim      600
+Jane     525
+Joe      735
+ 
+"""
+
+import csv
+
+data = []
+
+row1 = ["Name" , "Weekly Hours" , "Hourly Rate"]
+row2 = ["Tim" , 30 , 20]
+row3 = ["Jane" , 25 , 25]
+row4 = ["Joe" , 35 , 21]
+
+data.append(row1)
+data.append(row2)
+data.append(row3)
+data.append(row4)
+
+with open('Working_Data.csv' , 'w' , newline = '') as file:
+
+    writer = csv.writer(file)
+    writer.writerows(data)
+
+with open ('Working_Data.csv' , 'r') as file:
+    reader = csv.reader(file)
+    headers = next(reader)
+    for row in reader:
+        revenue = float(row[1]) * float(row[2])
+        print(f'{row[0]} : ${round(revenue,2)}')    
+'''        
+#print("=======================")     
