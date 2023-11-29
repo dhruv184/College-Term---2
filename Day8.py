@@ -106,3 +106,55 @@ with open('sales_data_output.csv' , 'w' , newline = '') as file:
     writer.writerows(data)
 '''
 #print("=======================")
+'''
+"""
+Exercise: Managing User Data with CSV
+
+Create a Python program that asks users to input information (e.g. name, age, and city) for
+multiple users.
+
+❑ Write this user data to a CSV file named user_data.csv.
+❑ Read the contents of user_data.csv and display the information.
+❑ Instructions:
+▪ Use the get_user_info() function to collect information for each user.
+▪ Use the csv.writer to write the list of user data to the CSV file.
+▪ Use the csv.reader to read and display the contents of the CSV file.
+▪ Feel free to modify the exercise based on your preferences or add more tasks if needed
+"""
+
+import csv
+
+def get_user_info():
+
+    name = input("Enter Name : ")
+    age = input("Enter Age : ")
+    city = input("Enter City : ")
+
+    return [name , age , city]
+
+def wirte_to_csv(file_name , data):
+
+    with open(file_name , 'a' , newline = '') as file:
+
+        writer = csv.writer(file)
+        writer.writerows(data)
+
+def read_and_display_csv(file_name):
+
+    with open(file_name , 'r') as file:
+
+        reader = csv.reader(file)
+        for row in csv.reader(file):
+            print(row)
+
+user_data_file = "user_data.csv"
+
+user_info = get_user_info()
+
+print(user_info)
+
+print(wirte_to_csv(user_data_file, user_info))
+
+print(read_and_display_csv(user_data_file))
+'''
+#print("=======================")
