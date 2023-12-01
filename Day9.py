@@ -13,7 +13,7 @@ import json
 
 d = {"name" : "Tim" , "age" : 33}
 
-with open('json_file_output' , 'w') as file:
+with open('json_file_output.json' , 'w') as file:
 
     json.dump(d,file)
 '''    
