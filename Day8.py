@@ -266,24 +266,3 @@ with open ('Working_Data.csv' , 'r') as file:
         print(f'{row[0]} : ${round(revenue,2)}')    
 '''        
 #print("=======================")     
-'''
-import csv
-
-output = []
-with open ('Working_Data.csv' , 'r') as file:
-    reader = csv.DictReader(file)
-    print("Name \t Weges")
-
-    for row in reader:
-        wage = int(row['Hours']) * int (row["Rate"])
-        print(f'{row["Name"]} \t {wage}')
-
-        d = [ "Name":row["Name"] , "Weges":wage]
-        output.append(d)
-
-with open('Working_Data_Out.csv' , 'w' , newline = '') as file:
-
-    writer = csv.writer(file)
-    writer.writerows(output)         
-                
-'''
