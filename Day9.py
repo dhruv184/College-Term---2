@@ -72,3 +72,21 @@ with open('json_file_output.json' , 'w') as file:
     json.dump(d,file , indent=2)
 ''' 
 #print("=======================")   
+'''
+import requests
+import json
+
+
+url = 'https://jsonplaceholder.typicode.com/users'
+
+response = requests.get(url)
+
+print(response.status_code)
+
+data = response.json()
+
+with open('json_response.json','w') as jsonFile:
+    json.dump(data,jsonFile, indent=2)
+'''
+#print("=======================")      
+  
