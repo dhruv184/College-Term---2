@@ -266,3 +266,40 @@ with open ('Working_Data.csv' , 'r') as file:
         print(f'{row[0]} : ${round(revenue,2)}')    
 '''        
 #print("=======================")     
+
+class User:
+    def __init__(self,name, hours, rate):
+        self.name = name
+        self.hours = hours
+        self.rate = rate
+
+    def wage (self):
+       return self.rate * self.hours
+    
+    def __str__(self):
+        return f"{self.name} \t {self.wage()}"
+    
+import csv
+
+users = []
+
+with open('Working_data.csv','r') as file:
+
+    reader = csv.reader(file)
+    headers = next(reader) 
+    for row in reader:
+
+        user = User(row[0], int(row[1]), int(row[2]))
+        users.append(user)
+
+print("Name \t Wages")
+for user in users:
+    print(user)
+
+
+with open('data_output.csv', 'w', newline= '') as csvFile:
+    writer = csv.writer(csvFile)
+    writer.writerow(["Name" ,"Wages"]) 
+    for user in users:
+        row = [user.name, user.wage()]
+        writer.writerow(row)
