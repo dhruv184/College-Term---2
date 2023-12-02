@@ -1,0 +1,22 @@
+[
+  {
+    "name": "sara",
+    "age": 12,
+    "address" : {"street": "Front Street" , "city":"Toronto"},
+    "courses": [
+      "english",
+      "math",
+      "chemistry"
+    ]
+  },
+  {
+    "name": "Tim",
+    "age": 32,
+    "address" : {"street": "Davis" , "city":"Mississauga"},
+    "courses": [
+      "english",
+      "java",
+      "python"
+    ]
+  }
+]

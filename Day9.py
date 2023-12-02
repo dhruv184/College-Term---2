@@ -22,10 +22,26 @@ with open('json_file_output.json' , 'w') as file:
 import json
 
 with open('JsonFile.json' , 'r') as file:
+
      data = json.load(file)
+
      print("Name =", data['Name'] )
      print("Age =", data['Age'])
      print("Phone", data['Phone'][0])
      print(type(data))
 '''
+#print("=======================")
+'''
+import json 
+
+with open('students.json','r') as jsonFile:
+   
+   data =  json.load(jsonFile)
+   print(type(data))
+
+   for user in data:
+      
+      print(user['name'], user['age'],user['courses'][2])
+      print(user['address']['city'])
+'''      
 #print("=======================")
