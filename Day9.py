@@ -45,3 +45,15 @@ with open('students.json','r') as jsonFile:
       print(user['address']['city'])
 '''      
 #print("=======================")
+'''
+import json
+
+with open('json_response.json' , 'r') as jsonfile:
+
+    data = json.load(jsonfile)
+
+    for emp in data :
+
+        print(emp['id'],emp['name'] , emp['company']['name'])
+'''
+#print("=======================")        
