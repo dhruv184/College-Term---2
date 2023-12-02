@@ -56,4 +56,19 @@ with open('json_response.json' , 'r') as jsonfile:
 
         print(emp['id'],emp['name'] , emp['company']['name'])
 '''
-#print("=======================")        
+#print("=======================")
+'''
+import json
+
+d = [{"name" : "Tim" ,"age" : 33}]
+
+name = input('Enter username: ')
+age = input("enter user age: ")
+user = {'name':name, 'age':age}
+
+d.append(user)
+
+with open('json_file_output.json' , 'w') as file:
+    json.dump(d,file , indent=2)
+''' 
+#print("=======================")   
