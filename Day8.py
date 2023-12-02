@@ -266,7 +266,7 @@ with open ('Working_Data.csv' , 'r') as file:
         print(f'{row[0]} : ${round(revenue,2)}')    
 '''        
 #print("=======================")     
-
+'''
 class User:
     def __init__(self,name, hours, rate):
         self.name = name
@@ -303,3 +303,5 @@ with open('data_output.csv', 'w', newline= '') as csvFile:
     for user in users:
         row = [user.name, user.wage()]
         writer.writerow(row)
+'''
+#print("=======================")           
