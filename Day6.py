@@ -56,7 +56,7 @@ Creating and Accessing Lists
 ❑ Add "watermelon" to the end of the list.
 ❑ Print the modified list.
 """
-
+'''
 fruits = ["Apple" , "Banana" , "Orange" , "Grape" , "Kiwi" ]
 numbers = [2 , 3, 5, 40 , 1 , 3]
 
@@ -85,7 +85,7 @@ numbers.sort(reverse = True)
 print(numbers)        # it  will  arange the list items in reverse order.
 
 print("\nModified list : ",fruits,"\n")
-
+'''
 #print("=======================")
 '''
 """
