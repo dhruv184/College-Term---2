@@ -76,13 +76,14 @@ class Data :
                 p = Product(row[0] , row[1] , row[2])
                 products.append(p)
 
-        return products        
-
+        return products     
+       
+    @staticmethod
     def writeData(filename,rows):
-
+        
         with open(filename ,'w' , newline='' ) as file:
 
-            writer = csv.writer(filename)
+            writer = csv.writer(file)
 
             writer.writerows(rows)
 
@@ -95,7 +96,8 @@ def displayMainMenu():
     print("1 to Add Products\n")
     print("2 to View the list of Products\n")
     print("3 to Find Products\n")
-    print("4 to Exit\n")
+    print("4 to Save in File\n")
+    print("5 to Exit\n")
 
 while True :     
     
@@ -135,9 +137,13 @@ while True :
 
         else:
 
-            print(f"Product with ID = {id} [ Not Found ] ")    
+            print(f"Product with ID = {id} [ Not Found ] ")   
 
-    elif x == 4 :
+    elif x == 4:
+
+        store.saveData()
+        
+    elif x == 5 :
 
         print("\n Thanks You \n")
         break        
