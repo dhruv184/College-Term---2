@@ -172,7 +172,7 @@ while True :
         break   
 '''    
 #print("=======================")  
-
+'''
 """
 Create python application that allow the
 owner of a product store owner to perform
@@ -183,6 +183,8 @@ the following tasks:
 Using GUI Interface
 """
 import csv
+import tkinter as tk
+from tkinter import messagebox , simpledialog
 
 class Product:
 
@@ -272,9 +274,6 @@ class Data :
 
 store = Store()
 
-import tkinter as tk
-from tkinter import messagebox , simpledialog
-
 class MainMenuGUI(tk.Tk):
     def __init__(self):
         super().__init__()
@@ -343,6 +342,8 @@ class MainMenuGUI(tk.Tk):
         self.store.updateProduct(p)
         messagebox.showinfo("Update Product", "Product updated successfully")
 
-if __name__ == "__main__":
-    app = MainMenuGUI()
-    app.mainloop()
+
+app = MainMenuGUI()
+app.mainloop()
+'''
+#print("=======================")  
