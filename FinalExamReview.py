@@ -8,6 +8,8 @@ the following tasks:
 3.Search for a specific product
 """
 
+import csv
+
 class Product:
 
     def __init__(self , id , name ,price):
@@ -24,7 +26,7 @@ class Store:
 
     def __init__(self):
 
-        self.products = []           
+        self.products = Data.getData('dataProducts.csv')           
 
     def addProduct(self , product ):
 
@@ -46,6 +48,43 @@ class Store:
                 break
         
         return p
+    
+    def saveData(self):
+
+        rows = [ ]
+
+        for p in self.products:
+
+            row = [p.id , p.name , p.price]
+            rows.append(row)
+
+        Data.writeData('dataProducts.csv' , rows)    
+
+class Data :
+    
+    @staticmethod
+    def getData( filename ):
+        
+        products = [ ]
+
+        with open(filename , "r") as file:
+
+            reader = csv.reader(file)
+
+            for row in reader:
+
+                p = Product(row[0] , row[1] , row[2])
+                products.append(p)
+
+        return products        
+
+    def writeData(filename,rows):
+
+        with open(filename ,'w' , newline='' ) as file:
+
+            writer = csv.writer(filename)
+
+            writer.writerows(rows)
 
 store = Store()
 
