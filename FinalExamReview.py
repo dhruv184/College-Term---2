@@ -60,6 +60,15 @@ class Store:
 
         Data.writeData('dataProducts.csv' , rows)    
 
+    def updateProduct(self,product):
+
+        p = self.findProduct(product.id)
+
+        if isinstance(p , Product):
+
+            p.name = product.name
+            p.price = product.price    
+
 class Data :
     
     @staticmethod
@@ -97,7 +106,9 @@ def displayMainMenu():
     print("2 to View the list of Products\n")
     print("3 to Find Products\n")
     print("4 to Save in File\n")
-    print("5 to Exit\n")
+    print("5 to Update\n")
+    print("6 to Delete\n")
+    print("7 to Exit\n")
 
 while True :     
     
@@ -142,8 +153,20 @@ while True :
     elif x == 4:
 
         store.saveData()
-        
-    elif x == 5 :
+
+    elif x == 5:
+
+        print("\n")
+        id = input("Enter Product id to Update Product : ")    
+        print("\n")
+        newName = input("Enter Updated Name : ")
+        newPrice = input("Enter Updated Price : ")
+
+        p = Product(id , newName , newPrice)
+
+        store.updateProduct(p)
+
+    elif x == 7 :
 
         print("\n Thanks You \n")
         break        
