@@ -182,9 +182,8 @@ the following tasks:
 3.Search for a specific product
 Using GUI Interface
 """
-import csv
 import tkinter as tk
-from tkinter import messagebox , simpledialog
+import csv
 
 class Product:
 
@@ -196,7 +195,7 @@ class Product:
 
     def __str__(self):
 
-        return f"\nId : {self.id} , Name : {self.name} , Price : {self.price}"
+        return f"Id : {self.id}\nName : {self.name}\nPrice : {self.price}\n"
 
 class Store:
 
@@ -274,76 +273,97 @@ class Data :
 
 store = Store()
 
-class MainMenuGUI(tk.Tk):
-    def __init__(self):
-        super().__init__()
-
+class BookStoreGUI:
+    def __init__(self, master):
+        self.master = master
+        self.master.title("Book Store Management System")
+        
         self.store = Store()
 
-        self.title("Product Management System")
-        self.geometry("400x300")
+        # Create labels and entry widgets
+        self.label_id = tk.Label(master, text="Product ID:")
+        self.entry_id = tk.Entry(master)
 
-        self.create_widgets()
+        self.label_name = tk.Label(master, text="Product Name:")
+        self.entry_name = tk.Entry(master)
 
-    def create_widgets(self):
-        label = tk.Label(self, text="Please select one of the following options:")
-        label.pack(pady=10)
+        self.label_price = tk.Label(master, text="Price:")
+        self.entry_price = tk.Entry(master)
 
-        buttons = [
-            ("Exit", self.exit_program),
-            ("View Products", self.view_products),
-            ("Add Product", self.add_product),
-            ("Find Product", self.find_product),
-            ("Save Data", self.save_data),
-            ("Update Product", self.update_product),
-        ]
+        # Create display box
+        self.display_box = tk.Text(master, height=10, width=40)
+        self.display_box.grid(row=0, column=2, rowspan=9, padx=10, pady=5)
 
-        for text, command in buttons:
-            button = tk.Button(self, text=text, command=command)
-            button.pack(pady=5)
+        # Create buttons
+        self.button_view = tk.Button(master, text="View Productss", command=self.view_products)
+        self.button_add = tk.Button(master, text="Add Products", command=self.add_product)
+        self.button_find = tk.Button(master, text="Find Products", command=self.find_product)
+        self.button_save = tk.Button(master, text="Save Products", command=self.save_data)
+        self.button_update = tk.Button(master, text="Update Product", command=self.update_product)
+        self.button_exit = tk.Button(master, text="Exit", command=self.master.destroy)
 
-    def display_products(self, products):
-        result = ""
-        for p in products:
-            result += str(p) + "\n"
-        messagebox.showinfo("List of Products", result)
+        # Arrange widgets using grid
+        self.label_id.grid(row=0, column=0, padx=10, pady=5)
+        self.entry_id.grid(row=0, column=1, padx=10, pady=5)
 
-    def exit_program(self):
-        self.destroy()
+        self.label_name.grid(row=1, column=0, padx=10, pady=5)
+        self.entry_name.grid(row=1, column=1, padx=10, pady=5)
+
+        self.label_price.grid(row=2, column=0, padx=10, pady=5)
+        self.entry_price.grid(row=2, column=1, padx=10, pady=5)
+
+        self.button_view.grid(row=3, column=0, columnspan=2, pady=10)
+        self.button_add.grid(row=4, column=0, columnspan=2, pady=10)
+        self.button_find.grid(row=5, column=0, columnspan=2, pady=10)
+        self.button_save.grid(row=6, column=0, columnspan=2, pady=10)
+        self.button_update.grid(row=7, column=0, columnspan=2, pady=10)
+        self.button_exit.grid(row=8, column=0, columnspan=2, pady=10)
 
     def view_products(self):
-        products = self.store.getProducts()
-        self.display_products(products)
+        self.clear_entries()
+        self.display_box.delete(1.0, tk.END)  # Clear the display box
+        self.display_box.insert(tk.END, "List of products:\n")
+        for p in self.store.getProducts():
+            self.display_box.insert(tk.END, str(p) + "\n")
 
     def add_product(self):
-        id = simpledialog.askstring("Input", "Enter product id:")
-        name = simpledialog.askstring("Input", "Enter product name:")
-        price = simpledialog.askstring("Input", "Enter product price:")
-        p = Product(id, name, price)
-        self.store.addProduct(p)
+        product_id = self.entry_id.get()
+        product_name = self.entry_name.get()
+        product_price = self.entry_price.get()
+        product = Product(product_id, product_name, product_price)
+        self.store.addProduct(product)
+        self.clear_entries()
 
     def find_product(self):
-        id = simpledialog.askstring("Input", "Enter product id:")
-        p = self.store.findProduct(id)
-        if isinstance(p, Product):
-            self.display_products([p])
+        product_id = self.entry_id.get()
+        product = self.store.findProduct(product_id)
+        self.display_box.delete(1.0, tk.END)  # Clear the display box
+        if isinstance(product, Product):
+            self.display_box.insert(tk.END, str(product))
         else:
-            messagebox.showinfo("Product Not Found", f"Product with id = {id} is not found")
+            self.display_box.insert(tk.END, f"Book with id = {product_id} is not found")
+        self.clear_entries()
 
     def save_data(self):
         self.store.saveData()
-        messagebox.showinfo("Save Data", "Data saved successfully")
+        self.display_box.delete(1.0, tk.END)  # Clear the display box
+        self.display_box.insert(tk.END, "Data saved successfully")
 
     def update_product(self):
-        id = simpledialog.askstring("Input", "Enter product id:")
-        new_name = simpledialog.askstring("Input", "Enter new name:")
-        new_price = simpledialog.askstring("Input", "Enter new price:")
-        p = Product(id, new_name, new_price)
-        self.store.updateProduct(p)
-        messagebox.showinfo("Update Product", "Product updated successfully")
+        product_id = self.entry_id.get()
+        new_name = self.entry_name.get()
+        new_price = self.entry_price.get()
+        product = Product(product_id, new_name, new_price)
+        self.store.updateProduct(product)
+        self.clear_entries()
 
+    def clear_entries(self):
+        self.entry_id.delete(0, tk.END)
+        self.entry_name.delete(0, tk.END)
+        self.entry_price.delete(0, tk.END)
 
-app = MainMenuGUI()
-app.mainloop()
+root = tk.Tk()
+app = BookStoreGUI(root)
+root.mainloop()
 '''
 #print("=======================")  
