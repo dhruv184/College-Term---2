@@ -273,7 +273,7 @@ class Data :
 
 store = Store()
 
-class BookStoreGUI:
+class ProductStoreGUI:
     def __init__(self, master):
         self.master = master
         self.master.title("Book Store Management System")
@@ -363,7 +363,7 @@ class BookStoreGUI:
         self.entry_price.delete(0, tk.END)
 
 root = tk.Tk()
-app = BookStoreGUI(root)
+app = ProductStoreGUI(root)
 root.mainloop()
 '''
 #print("=======================")  
