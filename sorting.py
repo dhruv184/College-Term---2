@@ -142,12 +142,31 @@ for e in mylist:
     print(e)    
 '''
 #print("=======================")
-
+'''
 import json
 
 with open('data.json' , 'r') as jsonFile:
 
     mylist = json.load(jsonFile)
 
+    print("By name")
+    mylist.sort(key = lambda e : e['Name'])
     for e in mylist:
         print(e)
+
+    print()
+
+    print("By age")
+    mylist.sort(key = lambda d : d['Age'])
+    for e in mylist:
+        print(e)
+
+    print()    
+
+    print("By city")
+    mylist.sort(key = lambda d : d['City'])
+    for e in mylist:
+        print(e)     
+'''
+#print("=======================")
+        
