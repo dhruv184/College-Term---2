@@ -169,7 +169,7 @@ with open('data.json' , 'r') as jsonFile:
         print(e)     
 '''
 #print("=======================")
-        
+'''        
 """
 Write python program that read data form file.json
 then claculate the total price for each product 
@@ -183,3 +183,21 @@ import json
 with open('file.json' , 'r') as jsonFile:
 
     mylist = json.load(jsonFile)
+
+    for e in mylist:
+        totalPrice = int(e['Quantity']) * int(e['Price'])
+        e['total'] = totalPrice
+    
+    print("By Product Name")
+    mylist.sort(key = lambda e : e['product'])
+    for e in mylist:
+        print(e)
+
+    print()    
+
+    print("By Total Price")    
+    mylist.sort(key = lambda e : e ['total'])
+    for e in mylist:
+        print(e)
+'''
+#print("=======================")
