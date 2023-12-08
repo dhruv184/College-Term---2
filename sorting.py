@@ -142,3 +142,12 @@ for e in mylist:
     print(e)    
 '''
 #print("=======================")
+
+import json
+
+with open('data.json' , 'r') as jsonFile:
+
+    mylist = json.load(jsonFile)
+
+    for e in mylist:
+        print(e)
