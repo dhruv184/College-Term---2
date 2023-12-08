@@ -114,4 +114,31 @@ sorted_list = sorted(users , key = lambda u : u.city)
 for u in sorted_list:
     print(u)        
 '''
-#print("=======================")    
+#print("=======================")
+'''
+d1 = {'Name' : "Tim" , 'Age' : 22 , 'City' : 'Toronto'}    
+d2 = {'Name' : "Jane" , 'Age' : 23 , 'City' : 'Mississauga'}    
+d3 = {'Name' : "Mark" , 'Age' : 32 , 'City' : 'Alberta'}    
+
+mylist = [d1 , d2 , d3]
+
+print("By name")
+mylist.sort(key = lambda d : d['Name'])
+for e in mylist:
+    print(e)
+
+print()
+
+print("By age")
+mylist.sort(key = lambda d : d['Age'])
+for e in mylist:
+    print(e)
+
+print()    
+
+print("By city")
+mylist.sort(key = lambda d : d['City'])
+for e in mylist:
+    print(e)    
+'''
+#print("=======================")
