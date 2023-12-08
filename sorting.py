@@ -201,3 +201,53 @@ with open('file.json' , 'r') as jsonFile:
         print(e)
 '''
 #print("=======================")
+'''
+"""
+Write python program that read data form csvfile.csv
+then claculate the total price for each product 
+and display the result 
+     1 - sorted by product name
+     2 - sorted by total price
+"""        
+import csv
+
+class Product:
+
+    def __init__(self, name , quantity , price):
+        
+        self.name = name
+        self.quantity = quantity
+        self.price = price
+
+    def total(self):
+
+        return self.quantity * self.price
+
+    def __str__(self):
+
+        return f"Name : {self.name} Quantity : {self.quantity} Price : {self.price} Total : {self.total()}"        
+    
+products = [ ]
+
+with open('csvfile.csv' , 'r') as File:
+
+    reader = csv.reader(File)
+    headers = next(reader)
+    
+    for row in reader:
+        product = Product(row[0], int(row[1]), int(row[2]))
+        products.append(product)
+    
+    print("By Product Name")
+    products.sort(key = lambda p : p.name)
+    for p in products:
+        print(p)
+
+    print()    
+    
+    print("By Total Price")    
+    products.sort(key = lambda p : p.total())
+    for p in products:
+        print(p)
+'''
+#print("=======================")
