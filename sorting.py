@@ -170,3 +170,16 @@ with open('data.json' , 'r') as jsonFile:
 '''
 #print("=======================")
         
+"""
+Write python program that read data form file.json
+then claculate the total price for each product 
+and display the result 
+     1 - sorted by product name
+     2 - sorted by total price
+"""        
+
+import json
+
+with open('file.json' , 'r') as jsonFile:
+
+    mylist = json.load(jsonFile)
