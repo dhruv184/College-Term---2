@@ -72,3 +72,46 @@ nums_sorted_lambda = sorted( nums , key = lambda n : n[len(n) - 1] , reverse = T
 print(nums_sorted_lambda)
 '''
 #print("=======================")
+'''
+class User : 
+
+    def __init__(self , name , age , city):
+
+        self.name = name
+        self.age = age
+        self.city = city
+
+    def __str__(self):
+
+        return f"Name : {self.name} Age : {self.age} City : {self.city}"
+
+u1 = User("Tim" , 22 , "Toronto")
+u2 = User("Jane" , 26 , "Mississauga")
+u3 = User("Mark" , 33 , "Alerta")
+
+users = [u1 , u2 , u3]
+
+def sort_by_name(u):
+
+    return u.name
+
+print("By name")
+sorted_list = sorted(users , key = sort_by_name)
+for u in sorted_list:
+    print(u)
+
+print()
+
+print("By age")
+sorted_list = sorted(users , key = lambda u : u.age)
+for u in sorted_list:
+    print(u)    
+
+print()
+
+print("By city")
+sorted_list = sorted(users , key = lambda u : u.city)
+for u in sorted_list:
+    print(u)        
+'''
+#print("=======================")    
