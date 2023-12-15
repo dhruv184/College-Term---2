@@ -579,3 +579,150 @@ app = appGUI(root)
 root.mainloop()
 '''
 #print("=======================")  
+
+import csv
+
+class Product : 
+
+    def __init__(self , code , name , type , price , quantity ):
+
+        self.code = code
+        self.name = name
+        self.type = type
+        self.price = price
+        self.quantity = quantity  
+
+    def __str__(self):
+
+        return f"\nCode : {self.code} , Name : {self.name} , Type : {self.type} , Price : {self.price} , Quantity : {self.quantity}"
+
+
+class Data : 
+
+    @staticmethod  
+
+    def getData(filename):
+
+        products = [ ]
+
+        with open(filename , "r") as file :
+
+            reader = csv.reader(file)
+
+            for row in reader:
+
+                p = Product(row[0] , row[1] , row[2] , row[3] , row[4])
+                products.append(p)
+
+            return products
+
+    @staticmethod
+
+    def writeData(filename , rows):
+
+        with open(filename , 'w' , newline ='') as file:
+
+            writer = csv.writer(file)  
+
+            writer.writerows(rows)
+
+class Store:
+
+    def __init__(self):
+
+        self.products = Data.getData('products_sales.csv')
+
+    def addProduct(self , product):
+
+        self.products.append(product)
+
+    def getProducts(self):
+
+        return self.products
+
+    def saveData(self):
+
+        rows = [ ]
+
+        for p in self.products:
+
+            row = [p.code , p.name , p.type , p.price , p.quantity]
+            rows.append(row)
+
+        Data.writeData('products_sales.csv' , rows)   
+
+    def findProduct(self, type):
+
+        p = None 
+
+        for product in self.products:
+
+            if product.type == type :
+               
+                p = product
+                print(p)
+
+    def calculateTotalRevenue(self):
+        total_revenue = sum(p.price * p.quantity for p in self.products)
+        return total_revenue           
+
+store = Store()
+
+def displayMainMenu():
+
+    print("\nPlease select One of the Follwoing Options : \n")
+
+    print("1 to View the list of Products \n")
+    print("2 to View Products By Type \n")
+    print("3 to Display Total Revenue \n ")
+    print("4 to add Product \n")
+    print("5 to Exit")
+
+while True :
+
+    displayMainMenu()
+
+    choice = int(input("-->"))
+
+    if choice == 1 :
+
+        print("\nList of Products : \n")
+
+        for p in store.getProducts():
+
+            print(p)
+
+    elif choice == 2 :        
+
+        print("\n")
+        x= str(input("Enter Product Type (Computer , Phone) : "))
+        type = x.capitalize()
+        p = store.findProduct(type)
+
+        if isinstance(p , Product):
+
+            print(p)
+
+    elif choice == 3:
+        total_revenue = store.calculateTotalRevenue()
+        print(f"\nTotal Revenue: ${total_revenue}\n")
+
+    elif choice == 4 :
+
+        print("\n")
+        code = int(input("Enter Product id : "))
+        name = str(input("Enter product Name : "))
+        type = str(input("Enter the Type of Product : "))
+        price = int(input("Enter product price : "))
+        quantity = int(input("Enter product Quantity : "))
+
+        p = Product(code , name , type , price , quantity)
+
+        store.addProduct(p)
+        store.saveData()
+
+    elif choice == 5 :
+
+        print("\n Thanks You \n")
+        break    
+    
